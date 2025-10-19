@@ -1,21 +1,3 @@
-//package com.emiliano.apprendre_login
-
-//import android.os.Bundle
-//import androidx.activity.ComponentActivity
-//import androidx.activity.compose.setContent
-//import com.emiliano.apprendre_login.ui.login.LoginScreen
-//import com.emiliano.apprendre_login.ui.theme.ApprendreLoginTheme
-
-//class MainActivity : ComponentActivity() {
-    //override fun onCreate(savedInstanceState: Bundle?) {
-        //super.onCreate(savedInstanceState)
-        //setContent {
-            //ApprendreLoginTheme {
-                //LoginScreen()
-            //}
-        //}
-    //}
-//}
 
 //https://apprendre-servidor.onrender.com/docs
 

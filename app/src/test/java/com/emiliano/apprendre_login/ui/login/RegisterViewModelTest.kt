@@ -102,7 +102,7 @@ class RegisterViewModelTest {
             role_id = 3
         )
 
-        // Simulem una resposta d’error HTTP 400
+        // Simulem una resposta d'error HTTP 400
         val errorResponse = Response.error<String>(
             400,
             ResponseBody.create(null, "")
@@ -113,7 +113,7 @@ class RegisterViewModelTest {
         testDispatcher.scheduler.advanceUntilIdle()
 
         // Verifiquem el missatge d'error
-        Assert.assertEquals("Error l'registrament d'usuari: 400", registerViewModel.registerState.value)
+        Assert.assertEquals("Error al registrar usuari: 400", registerViewModel.registerState.value)
     }
 
     // ------------------------ TEST 3 ------------------------

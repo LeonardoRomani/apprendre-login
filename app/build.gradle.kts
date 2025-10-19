@@ -76,43 +76,36 @@ dependencies {
 
     // --- Coroutines ---
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation(libs.androidx.junit.ktx)
+    implementation(libs.androidx.ui.test.junit4)
 
-    // ==========================
-    // TESTING DEPENDENCIES
-    // ==========================
-
-    // --- JUnit ---
-    testImplementation("junit:junit:4.13.2")
-
-    // --- AndroidX Testing ---
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2024.09.02"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    androidTestImplementation("io.mockk:mockk-android:1.13.8")
-    androidTestImplementation ("androidx.compose.ui:ui-test-junit4:<versió_compose>")
-    androidTestImplementation ("androidx.test.ext:junit:1.1.5") // JUnit4
-    androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
-
+    // --- FlowLayout ---
     implementation("com.google.accompanist:accompanist-flowlayout:0.30.1")
+
+    // ==========================
+    // TESTING DEPENDENCIES - CORREGIT
+    // ==========================
+
+    // --- Tests Units ---
+    testImplementation("junit:junit:4.13.2")
     testImplementation("androidx.test:core:1.5.0")
     testImplementation("org.robolectric:robolectric:4.11")
-
-    // --- Mockito (mocks per APIService) ---
+    testImplementation("io.mockk:mockk:1.13.8")
     testImplementation("org.mockito:mockito-core:5.12.0")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.3.1")
-
-    // --- Coroutines testing ---
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
-
-    // --- Flow testing (Turbine) ---
     testImplementation("app.cash.turbine:turbine:1.1.0")
-
-    // --- MockWebServer ---
     testImplementation("com.squareup.okhttp3:mockwebserver:4.10.0")
-
-    // --- LiveData / StateFlow testing ---
     testImplementation("androidx.arch.core:core-testing:2.2.0")
+
+    // --- Tests Android (INSTRUMENTATION) ---
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+
+    // FORÇEM la versió d'Espresso que necessita el Compose BOM
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0") // ← CANVIAT a 3.5.0
+
+    androidTestImplementation(platform("androidx.compose:compose-bom:2024.09.02"))
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
 
     // --- Debug tools ---
     debugImplementation("androidx.compose.ui:ui-tooling")
